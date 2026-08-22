@@ -37,7 +37,9 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
 <style>
   * { box-sizing: border-box; }
+  html, body { max-width: 100%; overflow-x: hidden; }
   body { margin: 0; background: #FCFAF6; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; }
   a { color: #5B6894; text-decoration: none; }
   a:hover { color: #B8912E; }
   input::placeholder, textarea::placeholder { color: #A79E90; }
@@ -74,6 +76,7 @@
     [style*="grid-template-columns: repeat(3"], [style*="grid-template-columns: repeat(2"], [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
     [style*="grid-template-columns: 64px 1fr auto auto"] { grid-template-columns: 40px 1fr auto !important; gap: 12px !important; }
     [style*="grid-template-columns: 64px 1fr;"] { grid-template-columns: 1fr !important; }
+    [style*="border-radius: 999px"][style*="white-space: nowrap"] { white-space: normal !important; }
     section, footer { padding-top: 56px !important; padding-bottom: 56px !important; }
     h1, h2 { text-wrap: balance; }
   }
