@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Checkout</title>
+<link rel="canonical" href="https://www.zoryaai.com/checkout">
+<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, nofollow">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body { margin: 0; background: #FBF9F2; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; }
+  a { color: #1B3AA0; text-decoration: none; }
+  a:hover { color: #E8552E; }
+  @media (max-width: 720px) {
+    [data-plans] { grid-template-columns: 1fr !important; }
+    [data-wrap] { padding: 28px 20px 60px !important; }
+  }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3AA0"></rect><text x="50" y="62" font-family="Georgia, serif" font-size="34" fill="#FFD500" text-anchor="middle">Z</text></svg></template>
+
+<div style="font-family: 'DM Sans', system-ui, sans-serif; color: #14205C; background: #FBF9F2; min-height: 100vh;">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 22px clamp(20px, 6vw, 64px); border-bottom: 1px solid rgba(20,32,92,0.08);">
+    <a href="/accelerator" style="font-family: 'Newsreader', serif; font-size: 20px; letter-spacing: -0.01em; color: #14205C; display: flex; align-items: baseline; gap: 9px;">
+      <img src="web/logo.webp" alt="Zorya AI" style="height: 40px; width: auto; display: block;">
+    </a>
+    <div style="display: flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5580;">
+      <span style="width: 7px; height: 7px; border-radius: 50%; background: #2E9E5B; display: inline-block;"></span>
+      Secure checkout
+    </div>
+  </header>
+
+  <div data-wrap="1" style="max-width: 900px; margin: 0 auto; padding: 56px clamp(20px, 6vw, 64px) 90px;">
+
+    <div style="font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #E8552E; text-align: center;">The Accelerator</div>
+    <h1 style="font-family: 'Newsreader', serif; font-weight: 300; font-size: clamp(32px, 4vw, 46px); line-height: 1.08; letter-spacing: -0.02em; margin: 14px 0 0; text-align: center; text-wrap: balance;">Complete your enrollment</h1>
+    <p style="font-size: 16px; line-height: 1.6; color: #4A5580; margin: 14px auto 0; max-width: 520px; text-align: center; text-wrap: pretty;">Choose how you'd like to pay. Your seat is confirmed once payment is complete.</p>
+
+    <div data-plans="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 44px;">
+
+      <button type="button" onClick="{{ selectFull }}" style="text-align: left; cursor: pointer; padding: 30px 26px; border-radius: 24px; background: {{ fullBg }}; border: 2px solid {{ fullBorder }}; font-family: inherit;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8552E;">Pay in full</div>
+        <div style="font-family: 'Newsreader', serif; font-size: 38px; letter-spacing: -0.02em; margin-top: 10px;">&euro;6,000</div>
+        <p style="font-size: 13px; line-height: 1.55; color: #4A5580; margin: 10px 0 0;">One payment, due today.</p>
+      </button>
+
+      <button type="button" onClick="{{ selectInstallments }}" style="text-align: left; cursor: pointer; padding: 30px 26px; border-radius: 24px; background: {{ instBg }}; border: 2px solid {{ instBorder }}; font-family: inherit;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8552E;">3 monthly installments</div>
+        <div style="font-family: 'Newsreader', serif; font-size: 38px; letter-spacing: -0.02em; margin-top: 10px;">&euro;2,000<span style="font-size: 16px; color: #4A5580;"> &times; 3</span></div>
+        <p style="font-size: 13px; line-height: 1.55; color: #4A5580; margin: 10px 0 0;">First payment today, then two more, one month apart. Same total, &euro;6,000.</p>
+      </button>
+
+    </div>
+
+    <div style="margin-top: 28px; padding: 20px 24px; border-radius: 18px; background: rgba(27,58,160,0.06);">
+      <p style="font-size: 13px; line-height: 1.6; color: #4A5580; margin: 0;">Have a discount code? You'll be able to enter it on the payment screen, and it applies to whichever plan you choose.</p>
+    </div>
+
+    <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(20,32,92,0.08);">
+      <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 22px; letter-spacing: -0.01em; margin: 0 0 6px;">A few details first</h2>
+      <p style="font-size: 13px; line-height: 1.6; color: #4A5580; margin: 0 0 22px;">So we know who's joining and how to help from day one. Submitting takes you straight to secure payment.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div>
+          <label style="font-size: 12px; color: #4A5580; display: block; margin-bottom: 6px;">Full name</label>
+          <input type="text" value="{{ name }}" onChange="{{ onName }}" placeholder="Jane Doe" style="width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid rgba(20,32,92,0.16); background: #FBF9F2; color: #14205C; font-size: 14px; font-family: inherit;">
+        </div>
+        <div>
+          <label style="font-size: 12px; color: #4A5580; display: block; margin-bottom: 6px;">Email</label>
+          <input type="email" value="{{ email }}" onChange="{{ onEmail }}" placeholder="jane@company.com" style="width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid rgba(20,32,92,0.16); background: #FBF9F2; color: #14205C; font-size: 14px; font-family: inherit;">
+        </div>
+        <div>
+          <label style="font-size: 12px; color: #4A5580; display: block; margin-bottom: 6px;">Phone number</label>
+          <input type="tel" value="{{ phone }}" onChange="{{ onPhone }}" placeholder="+386 40 000 000" style="width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid rgba(20,32,92,0.16); background: #FBF9F2; color: #14205C; font-size: 14px; font-family: inherit;">
+        </div>
+        <div style="grid-column: 1 / -1;">
+          <label style="font-size: 12px; color: #4A5580; display: block; margin-bottom: 6px;">Your biggest AI pain point</label>
+          <textarea value="{{ painPoint }}" onChange="{{ onPainPoint }}" placeholder="What's slowing you down right now?" rows="3" style="width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid rgba(20,32,92,0.16); background: #FBF9F2; color: #14205C; font-size: 14px; font-family: inherit; resize: vertical;"></textarea>
+        </div>
+      </div>
+
+      <button type="button" onClick="{{ onSubmit }}" style="display: flex; align-items: center; justify-content: center; width: 100%; margin-top: 24px; padding: 18px 28px; border-radius: 999px; background: {{ ctaBg }}; color: #FBF9F2; font-size: 15px; border: none; cursor: pointer; font-family: inherit;">{{ ctaLabel }}</button>
+      <sc-if value="{{ showValidation }}" hint-placeholder-val="{{ false }}">
+        <p style="font-size: 12px; color: #E8552E; margin: 10px 0 0; text-align: center;">Please fill in your name, email and pain point before continuing.</p>
+      </sc-if>
+      <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+        <p style="font-size: 12px; color: #E8552E; margin: 10px 0 0; text-align: center;">Something went wrong sending your details. You can still continue, or try again.</p>
+      </sc-if>
+      <p style="font-size: 11px; line-height: 1.45; margin: 10px 0 0; color: #8892C2;">* By submitting you agree to receive emails from Zorya AI about your enrollment.</p>
+    </div>
+
+    <p style="font-size: 12px; line-height: 1.6; color: #8892C2; margin: 28px 0 0; text-align: center;">Payment is processed by Stripe. Zorya AI never sees or stores your card details.</p>
+
+    <div style="margin-top: 56px; padding-top: 32px; border-top: 1px solid rgba(20,32,92,0.08); text-align: center;">
+      <p style="font-size: 13px; color: #4A5580; margin: 0;">Questions before you pay? <a href="/contact">Get in touch</a></p>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { plan: 'full', name: '', email: '', phone: '', painPoint: '', showValidation: false, showError: false, submitting: false };
+
+  // Replace with your real Stripe Payment Link URLs (Stripe Dashboard > Payment Links).
+  // Enable "Allow promotion codes" on both.
+  links = {
+    full: 'https://buy.stripe.com/REPLACE_WITH_FULL_PAYMENT_LINK',
+    installments: 'https://buy.stripe.com/REPLACE_WITH_INSTALLMENT_PAYMENT_LINK'
+  };
+
+  // Sign up free at formspree.io, create a form, and drop its endpoint ID in here.
+  // The form itself stays fully custom-styled; Formspree is just the invisible mail relay.
+  formspreeId = 'mdekylpy';
+
+  isValid() {
+    const s = this.state;
+    return s.name.trim() && /\S+@\S+\.\S+/.test(s.email) && s.painPoint.trim();
+  }
+
+  goToStripe() {
+    const base = this.state.plan === 'full' ? this.links.full : this.links.installments;
+    const url = base + (base.includes('?') ? '&' : '?') + 'prefilled_email=' + encodeURIComponent(this.state.email || '');
+    window.location.href = url;
+  }
+
+  async onSubmit() {
+    if (!this.isValid()) { this.setState({ showValidation: true }); return; }
+    this.setState({ submitting: true, showValidation: false, showError: false });
+    try {
+      const res = await fetch(`https://formspree.io/f/${this.formspreeId}`, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: this.state.name,
+          email: this.state.email,
+          phone: this.state.phone,
+          painPoint: this.state.painPoint,
+          plan: this.state.plan,
+          _subject: `Accelerator enrollment: ${this.state.name}`
+        })
+      });
+      if (!res.ok) throw new Error('bad response');
+      this.goToStripe();
+    } catch (e) {
+      this.setState({ submitting: false, showError: true });
+    }
+  }
+
+  renderVals() {
+    const isFull = this.state.plan === 'full';
+    const valid = this.isValid();
+    return {
+      fullBg: isFull ? 'rgba(27,58,160,0.06)' : '#FBF9F2',
+      fullBorder: isFull ? '#1B3AA0' : 'rgba(20,32,92,0.12)',
+      instBg: !isFull ? 'rgba(27,58,160,0.06)' : '#FBF9F2',
+      instBorder: !isFull ? '#1B3AA0' : 'rgba(20,32,92,0.12)',
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phone,
+      painPoint: this.state.painPoint,
+      showValidation: this.state.showValidation,
+      showError: this.state.showError,
+      ctaBg: this.state.submitting ? '#8892C2' : '#1B3AA0',
+      ctaLabel: this.state.submitting ? 'Sending...' : 'Continue to secure payment \u2192',
+      onName: e => this.setState({ name: e.target.value, showError: false }),
+      onEmail: e => this.setState({ email: e.target.value, showError: false }),
+      onPhone: e => this.setState({ phone: e.target.value }),
+      onPainPoint: e => this.setState({ painPoint: e.target.value, showError: false }),
+      onSubmit: () => this.onSubmit(),
+      selectFull: () => this.setState({ plan: 'full' }),
+      selectInstallments: () => this.setState({ plan: 'installments' })
+    };
+  }
+}
+
+</script>
+</body>
+</html>
