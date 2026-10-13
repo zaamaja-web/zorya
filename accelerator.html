@@ -28,6 +28,7 @@
 <script src="./support.js"></script>
 </head>
 <body>
+<x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -2089,7 +2090,8 @@
   </footer>
 </div>
 </sc-if>
-<script>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FFD500&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#FFD500&quot;,&quot;#E8552E&quot;,&quot;#1B3AA0&quot;,&quot;#F6D2C3&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;promiseStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;blue-yellow&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;blue-yellow&quot;,&quot;orange-pink&quot;],&quot;section&quot;:&quot;Brand&quot;}}">
 class Component extends DCLogic {
   state = { route: 'home', majaOpen: false, saraOpen: false, faqOpen: 0, accFaqOpen: -1, weekOpen: -1, email: '', sent: false, cName: '', cEmail: '', cReason: 'The Inner Circle', cMessage: '', cSent: false, cardTilt: {}, pillarTilt: {}, valueTilt: {}, sisterTilt: {}, phaseOpen: 0 };
 
